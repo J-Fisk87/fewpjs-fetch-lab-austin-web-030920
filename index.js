@@ -1,5 +1,11 @@
-function fetchBooks() {
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const url = "https://anapioficeandfire.com/api/books";
 
+function fetchBooks() {
+  return fetch(proxyurl + url)
+  .then(response => response.json())
+  .then(json => renderBooks(json)
+  );
 }
 
 function renderBooks(json) {
